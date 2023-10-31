@@ -2,7 +2,7 @@
 
 
 
-我们基于[PaddleSeg](https://github.com/PaddlePaddle/PaddleSeg)的分割模型和[DPR](https://github.com/zhhoper/DPR)relighting算法，实现了一个前后端交互的效果的relighting课程设计项目。
+我们基于[PaddleSeg](https://github.com/PaddlePaddle/PaddleSeg)的分割模型和[DPR](https://github.com/zhhoper/DPR)算法，实现了一个前后端交互的效果的relighting课程设计项目。
 
 
 
@@ -24,19 +24,23 @@
 
 
 
-![image-20231031203343988](image-20231031203343988.png)
+![image-20231031235159511](image-20231031235159511.png)
 
 
 
-使用方法：安装[PaddleSeg](https://github.com/PaddlePaddle/PaddleSeg)和[DPR](https://github.com/zhhoper/DPR)所需要的所有库函数
+使用方法：安装[PaddleSeg](https://github.com/PaddlePaddle/PaddleSeg)和[DPR](https://github.com/zhhoper/DPR)所需要的所有库函数或者requirements
+
+conda create --Paddle --requirements
+
+需要注意的是百度Paddle版本与CUDA和pytorch版本需要匹配。
 
 
 
-使用方法，在PaddleSeg文件夹下  python manage.py runserver
+使用方法，在根目录下  python manage.py runserver
 
 
 
-针对人像视频的relighting：待完成。
+针对人像视频的relighting：未部署到前端，可单独运行算法，运行video_relighting即可。
 
 
 
