@@ -1,46 +1,29 @@
- [简体中文](README_CN.md) | English
+Translated to English: [简体中文](https://www.forefront.ai/app/chat/README.md) | English
 
+We have implemented a relighting course design project with interactive front-end and back-end based on the segmentation model from [PaddleSeg](https://github.com/PaddlePaddle/PaddleSeg) and the DPR algorithm from [DPR](https://github.com/zhhoper/DPR).
 
+**Basic Goals:**
 
-We have implemented a relighting course project with interactive frontend and backend based on the segmentation model from [PaddleSeg](https://github.com/PaddlePaddle/PaddleSeg) and the relighting algorithm from [DPR](https://github.com/zhhoper/DPR).
+Complete the core algorithm part of the offline module to extract scene lighting and relight portraits.
 
-**Primary Objectives:**
+**Extended Goals:**
 
-Complete the core algorithm of the offline module, extract scene lighting, and relight portraits.
+Design a UI client that allows users to interact with the system by uploading images.
 
-**Additional Objectives:**
+The server should be able to receive user requests and save images.
 
-Design a UI client that allows user interaction and image uploads.
+The server should be able to successfully invoke the core image stitching algorithm.
 
-Enable the server to receive user requests and save images.
+The client, server, and core algorithm should be successfully integrated and run without major bugs.
 
-Ensure the server can smoothly invoke the core image stitching algorithm.
+![image-20231031235211143](image-20231031235211143.png)
 
-Ensure seamless integration and successful execution of the client, server, and core algorithm without any significant bugs.
+Usage: Install all the required libraries or requirements for [PaddleSeg](https://github.com/PaddlePaddle/PaddleSeg) and [DPR](https://github.com/zhhoper/DPR).
 
+conda create --Paddle --requirements
 
+Note that the version of PaddlePaddle needs to match the CUDA and PyTorch versions.
 
-![image-20231031203343988](image-20231031203343988.png)
+To use the system, run "python manage.py runserver" in the root directory.
 
-
-
-
-
-Usage instructions: Install all the required libraries for [PaddleSeg](https://github.com/PaddlePaddle/PaddleSeg) and [DPR](https://github.com/zhhoper/DPR).
-
-To use, navigate to the PaddleSeg folder and run "python manage.py runserver."
-
-For relighting on portrait videos: Work in progress.
-
-
-
-
-
-
-
-
-
-
-
-
-
+For relighting of portrait videos: Not deployed to the front-end, can be run separately by running the "video_relighting" algorithm.
