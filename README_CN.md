@@ -32,11 +32,13 @@
 
 
 
-使用方法，在PaddleSeg文件夹下  python manage.py runserver
+使用方法，在根目录下  python manage.py runserver
 
 
 
-针对人像视频的relighting：待完成。
+
+
+针对人像视频的relighting：未部署到前端，可单独运行算法。
 
 
 
