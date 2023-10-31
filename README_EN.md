@@ -1,4 +1,4 @@
-Translated to English: [简体中文](https://www.forefront.ai/app/chat/README.md) | English
+Translated to English: [简体中文](README_CN.md) | English
 
 We have implemented a relighting course design project with interactive front-end and back-end based on the segmentation model from [PaddleSeg](https://github.com/PaddlePaddle/PaddleSeg) and the DPR algorithm from [DPR](https://github.com/zhhoper/DPR).
 
