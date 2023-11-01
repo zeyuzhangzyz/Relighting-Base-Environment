@@ -8,7 +8,7 @@ def relighting_single_image():
     # Predict the segmentation result of the face
     face_name = 'face'
     env_name = 'bgi'
-    command = 'conda activate Paddle & python tools/predict.py        ' \
+    command = 'conda activate RBE_Paddle & python tools/predict.py        ' \
           '--config configs/human_pp_humansegv2_lite.yml      ' \
           '--model_path pretrained_models/human_pp_humansegv2_lite_192x192_pretrained/model.pdparams        ' \
           '--image_path img/'+face_name+'.jpg' \
@@ -193,4 +193,6 @@ def relighting_single_video():
     cv2.destroyAllWindows()
     video.release()
 
-relighting_single_video()
+# relighting_single_video()
+
+relighting_single_image()

@@ -24,29 +24,42 @@
 
 
 
+示范：
+
 ![image-20231031235159511](image-20231031235159511.png)
 
 
 
-使用方法：安装[PaddleSeg](https://github.com/PaddlePaddle/PaddleSeg)和[DPR](https://github.com/zhhoper/DPR)所需要的所有库函数或者requirements
+**环境配置：**
 
-conda create --Paddle --requirements
+安装[PaddleSeg](https://github.com/PaddlePaddle/PaddleSeg)和[DPR](https://github.com/zhhoper/DPR)所需要的所有库函数
 
-需要注意的是百度Paddle版本与CUDA和pytorch版本需要匹配。
-
-
-
-使用方法，在根目录下  python manage.py runserver
-
-
-
-针对人像视频的relighting：未部署到前端，可单独运行算法，运行video_relighting即可。
+首先使用conda创建一个虚拟环境，已经有很多自带的安装包了，安装requirement.txt里面的库，再安装pytorch，这里根据CUDA版本例如CUDA=11.7和对应的cuDNN，使用下面两条命令安装对应的torch 和paddlepaddle（请更换对应的版本，Paddle版本与CUDA和pytorch版本需要匹配。，参考[PyTorch](https://pytorch.org/)，参考[Windows 下的 PIP 安装-使用文档-PaddlePaddle深度学习平台](https://www.paddlepaddle.org.cn/documentation/docs/zh/install/pip/windows-pip.html)），CPU版本请相应安装。（如果torch对应CUDA=11.7的版本频繁安装失败，也可使用11.8）
 
 
 
 
+conda create -n Paddle python=3.9.12 
+
+pip install -r requirements.txt
+
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117                                
+
+python -m pip install paddlepaddle-gpu==2.5.2.post117 -f https://www.paddlepaddle.org.cn/whl/windows/mkl/avx/stable.html  
 
 
+
+**使用方法**：在根目录下  python manage.py runserver
+
+或者运行video_relighting.py函数，自行选择视频和图像。
+
+
+
+**Warning:** 如果会出现Library cublas64_12.dll is not found，请在环境的bin目录下，复制Library cublas64_11.dll重命名为Library cublas64_12.dll。原因暂不明。
+
+
+
+声明：本项目参考了[DPR](https://github.com/zhhoper/DPR)的代码
 
 
 
