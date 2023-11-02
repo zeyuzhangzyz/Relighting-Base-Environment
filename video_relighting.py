@@ -83,7 +83,7 @@ def relighting_single_video():
     """
     Perform relighting on a single video.
     """
-    face_name = 'face'
+    face_name = 'face3'
     command = 'conda activate Paddle & python tools/predict.py        ' \
               '--config configs/human_pp_humansegv2_lite.yml      ' \
               '--model_path pretrained_models/human_pp_humansegv2_lite_192x192_pretrained/model.pdparams        ' \
@@ -108,26 +108,29 @@ def relighting_single_video():
     begin_frame = 1300
     end_frame = 1400
     video_path = "img/input.mp4"
-    cap = cv2.VideoCapture(video_path)
-    if not cap.isOpened():
-        print("Unable to open video file")
-        exit()
-    frame_count = 0
-    while True:
-        ret, frame = cap.read()
-        if not ret:
-            break
-        if frame_count >= begin_frame and frame_count < end_frame:
-            frame_filename = f"img/env{frame_count:04d}.jpg"
-            cv2.imwrite(frame_filename, frame)
-        frame_count += 1
-    cap.release()
-    cv2.destroyAllWindows()
+    if not os.path.exists(f"img/env{begin_frame:04d}.jpg"):
+        cap = cv2.VideoCapture(video_path)
+        if not cap.isOpened():
+            print("Unable to open video file")
+            exit()
+        frame_count = 0
+        while True:
+            ret, frame = cap.read()
+            if not ret:
+                break
+            if frame_count >= begin_frame and frame_count < end_frame:
+                frame_filename = f"img/env{frame_count:04d}.jpg"
+                cv2.imwrite(frame_filename, frame)
+            frame_count += 1
+        cap.release()
+        cv2.destroyAllWindows()
 
 
     env_index_list = [i for i in range(begin_frame,end_frame)]
     for env_index in env_index_list:
+
         count = env_index-begin_frame
+        print('the processing frame index : %s ' %count)
         env_name = 'env'+str(env_index)
 
 
@@ -193,6 +196,6 @@ def relighting_single_video():
     cv2.destroyAllWindows()
     video.release()
 
-# relighting_single_video()
+relighting_single_video()
 
-relighting_single_image()
+# relighting_single_image()

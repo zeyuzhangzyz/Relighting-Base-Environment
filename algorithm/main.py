@@ -14,9 +14,6 @@ def mymain():
           '--model_path pretrained_models/human_pp_humansegv2_lite_192x192_pretrained/model.pdparams        ' \
           '--image_path img/'+face_name+'.jpg' \
               ' --save_dir img'
-
-
-
     os.system(command)
 
 
@@ -41,6 +38,7 @@ def mymain():
 
     env_image = cv2.imread('img/'+env_name+'.jpg')
     env_image = cv2.resize(env_image, (512, 512))
+    cv2.imwrite('img/' + env_name + '_resize.jpg',env_image)
     env_image = env_image / 255.0
     env_image = env_image.reshape(-1, 3)
     normal = get_normal()

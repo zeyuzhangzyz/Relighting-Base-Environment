@@ -47,7 +47,7 @@ pip3 install torch torchvision torchaudio --index-url https://download.pytorch.o
 
 python -m pip install paddlepaddle-gpu==2.5.2.post117 -f https://www.paddlepaddle.org.cn/whl/windows/mkl/avx/stable.html  
 
-
+pip install PaddleSeg 
 
 **使用方法**：在根目录下  python manage.py runserver
 
